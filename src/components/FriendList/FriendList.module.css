@@ -1,0 +1,7 @@
+.friendList {
+    width: 300px;
+}
+
+.friendList li+li {
+    margin-top: 10px;
+}
