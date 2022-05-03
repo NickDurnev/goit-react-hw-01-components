@@ -1,14 +1,15 @@
-.profile {
+import styled from "styled-components";
+
+export const Profile = styled.div`
     width: 300px;
     text-align: center;
     box-shadow: var(--card-shadow);
-}
+`
 
-.description {
-    padding: 30px;
-}
+export const Description = styled.div`
+padding: 30px;
 
-.avatar {
+& img {
     margin-left: auto;
     margin-right: auto;
     max-width: 150px;
@@ -16,43 +17,43 @@
     margin-bottom: 20px;
 }
 
-.description p+p {
+& p+p {
     margin-top: 10px;
 }
+`;
 
-.name {
+export const Name = styled.p`
     font-size: 24px;
     font-weight: 700;
-}
+`;
 
-.tag,
-.location {
+export const Info = styled.p`
     font-size: 18px;
     color: var(--add-text-color);
-}
+`;
 
-.stats {
+export const Stats = styled.div`
     display: flex;
     justify-content: space-around;
     border-top: solid 1px rgb(214, 209, 209);
-}
 
-.stats li+li {
-    border-left: solid 1px rgb(214, 209, 209);
-}
+    & li {
+        width: calc(100%/3);
+        padding: 20px;
+    }
 
-.statCell {
-    width: calc(100%/3);
-    padding: 20px;
-}
+    & li+li {
+        border-left: solid 1px rgb(214, 209, 209);
+    }
+`
 
-.label {
+export const Label = styled.span`
     display: block;
     color: var(--add-text-color);
     margin-bottom: 5px;
-}
+`;
 
-.quantity {
+export const Quantity = styled.span`
     font-size: 20px;
     font-weight: 700;
-}
+`;

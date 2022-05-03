@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import s from "./Profile.module.css"
+import * as Styles from "./Profile.styled";
 
 const Profile = ({
     username,
@@ -9,33 +9,32 @@ const Profile = ({
     stats
 }) => {
     return (
-<div className={s.profile}>
-    <div className={s.description}>
+<Styles.Profile>
+    <Styles.Description>
         <img
         src={avatar}
         alt="User avatar"
-        className ={s.avatar}
         />
-        <p className ={s.name}>{username}</p>
-        <p className={s.tag}>@{tag}</p>
-        <p className ={s.location}>{location}</p>
-    </div>
+        <Styles.Name>{username}</Styles.Name>
+        <Styles.Info>@{tag}</Styles.Info>
+        <Styles.Info>{location}</Styles.Info>
+    </Styles.Description>
 
-    <ul className ={s.stats}>
-        <li className ={s.statCell}>
-        <span className ={s.label}>Followers</span>
-        <span className ={s.quantity}>{stats.followers}</span>
+    <Styles.Stats>
+        <li>
+        <Styles.Label>Followers</Styles.Label>
+        <Styles.Quantity>{stats.followers}</Styles.Quantity>
         </li>
-        <li className ={s.statCell}>
-        <span className ={s.label}>Views</span>
-        <span className ={s.quantity}>{stats.views}</span>
+        <li>
+        <Styles.Label>Views</Styles.Label>
+        <Styles.Quantity>{stats.views}</Styles.Quantity>
         </li>
-        <li className ={s.statCell}>
-        <span className ={s.label}>Likes</span>
-        <span className ={s.quantity}>{stats.likes}</span>
+        <li>
+        <Styles.Label>Likes</Styles.Label>
+        <Styles.Quantity>{stats.likes}</Styles.Quantity>
         </li>
-    </ul>
-</div>
+    </Styles.Stats>
+</Styles.Profile>
     );
 };
 

@@ -1,20 +1,20 @@
 import PropTypes from "prop-types";
-import s from "./Statistics.module.css"
+import { Stats, Statlist, Label, Percentage } from "./Statistics.styled";
 
 const Statistics = ({ title, stats}) => {
     return (
         <div>
-            <section className={s.statistics}>
-                {title && <h2 className={s.title}>Upload stats</h2>}
-                <ul className={s.statList}>
+            <Stats>
+                {title && <h2>Upload stats</h2>}
+                <Statlist>
                     {stats.map(item => (
-                        <li className={s.item} key={item.id} style={{ backgroundColor: getRandomHexColor() }}>
-                            <span className={s.label}>{item.label}</span>
-                            <span className={s.percentage}>{item.percentage}%</span>
+                        <li key={item.id} style={{ backgroundColor: getRandomHexColor() }}>
+                            <Label>{item.label}</Label>
+                            <Percentage>{item.percentage}%</Percentage>
                         </li>
                     ))}
-                </ul>
-            </section>
+                </Statlist>
+            </Stats>
         </div>
     );
 };
